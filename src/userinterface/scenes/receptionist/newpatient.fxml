@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="container" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.receptionist.NewPatientController">
+   <top>
+      <VBox cache="true" maxHeight="-Infinity" maxWidth="800.0" minHeight="-Infinity" minWidth="500.0" prefWidth="500.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+         </BorderPane.margin>
+         <effect>
+            <DropShadow color="GREY" offsetY="5.0" />
+         </effect>
+         <children>
+            <VBox prefWidth="100.0">
+               <children>
+                  <Label text="New Patient Details" underline="true">
+                     <VBox.margin>
+                        <Insets bottom="7.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Enter the details for the new patient" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="60.0" />
+               </VBox.margin>
+            </VBox>
+            <Label text="Personal Details">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Name">
+               <VBox.margin>
+                  <Insets bottom="7.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane prefHeight="117.0" prefWidth="550.0">
+               <children>
+                  <GridPane hgap="12.0" layoutX="14.0" layoutY="14.0" prefHeight="84.0" prefWidth="415.0" vgap="20.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="73.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="300.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Firstname" GridPane.halignment="RIGHT" />
+                        <Label text="Middlename" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label text="Lastname" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <TextField fx:id="txFirstname" GridPane.columnIndex="1" />
+                        <TextField fx:id="txMiddlename" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txLastname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="*" textFill="RED" />
+                        <Label text="*" textFill="RED" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <Label text="Birthdate and Gender">
+               <VBox.margin>
+                  <Insets bottom="7.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane prefHeight="100.0" prefWidth="550.0">
+               <children>
+                  <GridPane hgap="12.0" layoutX="14.0" layoutY="13.0" prefHeight="75.0" prefWidth="250.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="70.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="160.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Birthdate" GridPane.halignment="RIGHT" />
+                        <Label text="Gender" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="dpBirthdate" GridPane.columnIndex="1" />
+                        <ChoiceBox fx:id="cbGender" cache="true" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="*" textFill="RED" />
+                        <Label text="*" textFill="RED" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <Label text="Contact Details">
+               <VBox.margin>
+                  <Insets bottom="7.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane prefHeight="99.0" prefWidth="535.0">
+               <children>
+                  <GridPane hgap="12.0" layoutY="6.0" prefHeight="83.0" prefWidth="353.0">
+                     <children>
+                        <Label text="Contact Number" GridPane.halignment="RIGHT" />
+                        <Label text="Address" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <TextField fx:id="txContactNumber" GridPane.columnIndex="1" />
+                        <TextField fx:id="txAddress" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="0.0" text="*" textFill="RED" />
+                        <Label text="*" textFill="RED" GridPane.rowIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="101.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <Label text="Religion and Nationality">
+               <VBox.margin>
+                  <Insets bottom="7.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane prefHeight="101.0" prefWidth="550.0">
+               <children>
+                  <GridPane hgap="12.0" layoutY="6.0" prefHeight="83.0" prefWidth="353.0">
+                     <children>
+                        <Label text="Religion" GridPane.halignment="RIGHT" />
+                        <Label text="Nationality" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <TextField fx:id="txReligion" GridPane.columnIndex="1" />
+                        <TextField fx:id="txNationality" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="101.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <HBox nodeOrientation="RIGHT_TO_LEFT" prefWidth="550.0" spacing="12.0">
+               <children>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#saveAction" text="Save" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+         </padding>
+      </VBox>
+   </top>
+</BorderPane>

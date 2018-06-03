@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <HBox spacing="7.0">
+         <children>
+              <Label text="Name" />
+            <Label text="*" textFill="RED" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="7.0" top="15.0" />
+         </VBox.margin>
+      </HBox>
+      <ComboBox fx:id="cbConditionName" editable="true" prefWidth="175.0" promptText="Condition Name" />
+      <HBox spacing="7.0">
+         <children>
+              <Label text="Status" />
+            <Label text="*" textFill="RED" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="7.0" top="15.0" />
+         </VBox.margin>
+      </HBox>
+        <TextField fx:id="txConditionStatus" />
+        <Label text="Description">
+            <VBox.margin>
+                <Insets bottom="13.0" top="6.0" />
+            </VBox.margin>
+        </Label>
+      <TextArea fx:id="taConditionDescription" prefHeight="130.0" prefWidth="200.0" />
+        <HBox nodeOrientation="RIGHT_TO_LEFT" prefWidth="200.0" spacing="7.0">
+            <children>
+                <Button defaultButton="true" mnemonicParsing="false" onAction="#conditionAddAction" text="Ok" />
+                <Button cancelButton="true" mnemonicParsing="false" onAction="#cancelNewConditionAction" text="Cancel" />
+            </children>
+            <VBox.margin>
+                <Insets bottom="13.0" top="17.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+    </padding>
+</VBox>

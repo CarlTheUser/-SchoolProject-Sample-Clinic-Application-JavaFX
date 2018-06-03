@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="container" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.receptionist.PatientDetailsController">
+   <center>
+      <VBox maxWidth="800.0" prefWidth="500.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+         </padding>
+         <effect>
+            <DropShadow color="#00000066" offsetY="5.0" />
+         </effect>
+         <children>
+            <VBox prefWidth="100.0">
+               <children>
+                  <Label text="Patient Details" underline="true">
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="7.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="The details of patient includes personal information, list of medical conditions, list of contact persons, and list of visit histories" wrapText="true" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="60.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox fx:id="patientDetailsPane" prefWidth="100.0">
+               <children>
+                  <Label styleClass="sub-heading" text="Personal Information">
+                     <VBox.margin>
+                        <Insets bottom="7.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox nodeOrientation="RIGHT_TO_LEFT" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#editPersonAction" text="Edit" />
+                     </children>
+                  </HBox>
+                  <Label text="Patient No" />
+                  <Label fx:id="labelPatientNumber" text="[Patient Number]" />
+                  <Label text="Name">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="labelName" text="[Patient Name]">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="7.0" prefHeight="200.0" prefWidth="499.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.0" minWidth="10.0" prefWidth="241.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="252.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox prefWidth="100.0">
+                           <children>
+                              <Label text="Birthdate and Age">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox spacing="7.0">
+                                 <children>
+                                    <Label fx:id="labelBirthdate" text="[Birthdate]" />
+                                    <Label fx:id="labelAge" text="[Age]" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="100.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="Gender">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="labelGender" text="[Gender]" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="100.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="Contact Number">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="labelContactNumber" text="[Contact Number]" />
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="100.0" GridPane.rowIndex="3">
+                           <children>
+                              <Label text="Address">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="labelAddress" text="[Address]" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label text="Nationality">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="labelNationality" text="[Nationality]" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="Religion">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="labelReligion" text="[Religion]" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox fx:id="patientEditPane" prefWidth="100.0">
+               <children>
+                  <Label text="Name">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane hgap="12.0" vgap="7.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="95.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="343.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Firstname" GridPane.halignment="RIGHT" />
+                        <Label text="Middlename" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label text="Lastname" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <TextField fx:id="txFirstname" GridPane.columnIndex="1" />
+                        <TextField fx:id="txMiddlename" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txLastname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                     <VBox.margin>
+                        <Insets right="50.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <Label text="Birthdate and Gender">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane hgap="12.0" vgap="7.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="240.0" minWidth="10.0" prefWidth="96.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.0" minWidth="10.0" prefWidth="392.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Birthdate" />
+                        <Label text="Gender" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="dpBirthdate" GridPane.columnIndex="1" />
+                        <ChoiceBox fx:id="cbGender" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Label text="Contact Details">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane hgap="12.0" vgap="7.0">
+                     <children>
+                        <Label text="Contact Number" />
+                        <Label text="Address" GridPane.rowIndex="1" />
+                        <TextField fx:id="txContactNumber" GridPane.columnIndex="1" />
+                        <TextField fx:id="txAddress" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="240.0" minWidth="10.0" prefWidth="95.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.0" minWidth="10.0" prefWidth="343.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets right="50.0" />
+                     </padding>
+                  </GridPane>
+                  <Label text="Religion and Nationality">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane hgap="12.0" vgap="7.0">
+                     <children>
+                        <Label text="Religion" />
+                        <Label text="Nationality" GridPane.rowIndex="1" />
+                        <TextField fx:id="txReligion" GridPane.columnIndex="1" />
+                        <TextField fx:id="txNationality" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="240.0" minWidth="10.0" prefWidth="95.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.0" minWidth="10.0" prefWidth="343.0" />
+                     </columnConstraints>
+                     <padding>
+                        <Insets right="50.0" />
+                     </padding>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="7.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#applyEditPersonAction" text="Apply" />
+                        <Button mnemonicParsing="false" onAction="#cancelEditPersonAncton" text="Cancel" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label styleClass="sub-heading" text="Conditions">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#newConditionAction" text="Add" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="7.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="tbConditions" editable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="conditionColumn" onEditCancel="#conditionColumnEditCancelEvent" onEditCommit="#conditionColumnEditCommitEvent" onEditStart="#conditionColumnEditStartEvent" prefWidth="117.0" text="Condition" />
+                <TableColumn fx:id="statusColumn" onEditCancel="#conditionColumnEditCancelEvent" onEditCommit="#statusColumnEditCommitEvent" onEditStart="#conditionColumnEditStartEvent" prefWidth="97.0" text="Status" />
+                  <TableColumn fx:id="descriptionColumn" onEditCancel="#conditionColumnEditCancelEvent" onEditCommit="#descriptionColumnEditCommitEvent" onEditStart="#conditionColumnEditStartEvent" prefWidth="285.0" text="Description" />
+              </columns>
+            </TableView>
+            <Label styleClass="sub-heading" text="Contact Persons">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#newContactPersonAction" text="Add" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="7.0" top="12.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="tbContacts" editable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="nameColumn" onEditCancel="#contactPersonColumnEditCancelEvent" onEditCommit="#nameColumnEditCommitEvent" onEditStart="#contactPersonColumnEditStartEvent" prefWidth="130.0" text="Name" />
+                  <TableColumn fx:id="relationshipColumn" minWidth="0.0" onEditCancel="#contactPersonColumnEditCancelEvent" onEditCommit="#relationshipColumnEditCommitEvent" onEditStart="#contactPersonColumnEditStartEvent" prefWidth="98.0" text="Relation" />
+                <TableColumn fx:id="contactNumberColumn" onEditCancel="#contactPersonColumnEditCancelEvent" onEditCommit="#contactNumberColumnEditCommitEvent" onEditStart="#contactPersonColumnEditStartEvent" prefWidth="95.0" text="Number" />
+                  <TableColumn fx:id="addressColumn" onEditCancel="#contactPersonColumnEditCancelEvent" onEditCommit="#addressColumnEditCommitEvent" onEditStart="#contactPersonColumnEditStartEvent" prefWidth="176.0" text="Address" />
+              </columns>
+            </TableView>
+            <Label styleClass="sub-heading" text="Hospital Visits">
+               <VBox.margin>
+                  <Insets bottom="7.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="tbVisits" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="Id" />
+                <TableColumn fx:id="visitDateColumn" prefWidth="153.0" text="Date" />
+                  <TableColumn fx:id="notesColumn" prefWidth="204.0" text="Notes" />
+                  <TableColumn fx:id="viewColumn" prefWidth="77.0" text="Action" />
+              </columns>
+            </TableView>
+            <HBox nodeOrientation="RIGHT_TO_LEFT" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#newVisitAction" text="New Visit" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

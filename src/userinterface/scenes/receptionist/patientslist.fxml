@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="defaultContainer" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.receptionist.PatientsListController">
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="800.0" minHeight="-Infinity" minWidth="500.0" prefWidth="500.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow color="GREY" offsetY="5.0" />
+         </effect>
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox prefWidth="100.0">
+               <children>
+                  <Label text="Patients Record" underline="true">
+                     <VBox.margin>
+                        <Insets bottom="7.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="List of all previous patients that attended into the hospital." />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="60.0" />
+               </VBox.margin>
+            </VBox>
+            <HBox prefWidth="200.0" spacing="12.0">
+               <children>
+                  <TextField fx:id="searchField" onKeyReleased="#textChange" prefWidth="300.0" promptText="Find Patient" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="tbPatients" prefHeight="400.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="57.0" text="Id" />
+                <TableColumn fx:id="nameColumn" prefWidth="162.0" text="Patient" />
+                  <TableColumn fx:id="ageColumn" minWidth="6.0" prefWidth="38.0" text="Age" />
+                  <TableColumn fx:id="genderColumn" prefWidth="49.0" text="Gender" />
+                  <TableColumn fx:id="contactNumberColumn" prefWidth="108.0" text="Contact Number" />
+                  <TableColumn fx:id="viewColumn" prefWidth="75.0" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="25.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="container" minWidth="-Infinity" prefWidth="600.0" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.administrator.StaffDetailsController">
+    <center>
+        <VBox maxWidth="800.0" prefWidth="500.0" styleClass="default-form" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+            </BorderPane.margin>
+            <children>
+                <VBox>
+                    <children>
+                        <Label styleClass="heading" text="Hospital Staff Details">
+                            <VBox.margin>
+                                <Insets bottom="7.0" />
+                            </VBox.margin></Label>
+                        <Label text="View the details of the staff, change the scope of account, or deactivate this account." />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="60.0" />
+                    </VBox.margin>
+                </VBox>
+            <Label styleClass="sub-heading" text="Staff Details" />
+                <Label text="Staff Number">
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </Label>
+            <Label fx:id="staffNumberLabel" layoutX="30.0" layoutY="187.0" text="[Staff Id]" />
+                <Label fx:id="nameLabel" text="[Full Name]">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+                </Label>
+                <HBox spacing="7.0" />
+                <Label fx:id="genderLabel" text="[Gender]" />
+                <Label fx:id="ageLabel" text="[Age]" />
+                <Label fx:id="birthdateLabel" text="[Birthdate]" />
+                <Label styleClass="sub-heading" text="Professional Details">
+                    <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="positionLabel" text="[Position]" />
+                <Label fx:id="expertiseLabel" text="[Expertise]" />
+                <Label styleClass="sub-heading" text="Contact Details">
+                    <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="contactNumberLabel" text="[Contact Number]" />
+                <Label fx:id="emailLabel" text="[Email]" />
+                <Label fx:id="addressLabel" text="[Address]" />
+            <Label styleClass="sub-heading" text="Staff Account">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Username">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="usernameLabel" text="[Username]" />
+            <Label text="Account Type">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <ChoiceBox fx:id="accountTypeChoice" prefWidth="150.0" />
+            <Label text="Activation">
+               <VBox.margin>
+                  <Insets bottom="7.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <VBox spacing="12.0">
+               <children>
+                  <RadioButton fx:id="activateRadio" mnemonicParsing="false" onAction="#activate" text="Activated">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="accountActivation" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="deactivateRadio" mnemonicParsing="false" onAction="#deactivate" text="Deactivated" toggleGroup="$accountActivation" />
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </VBox>
+            </children></VBox>
+    </center>
+</BorderPane>

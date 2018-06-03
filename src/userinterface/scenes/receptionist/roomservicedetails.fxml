@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.receptionist.RoomServiceDetailsController">
+   <children>
+      <HBox spacing="7.0">
+         <children>
+            <Label text="Room Number" />
+            <Label fx:id="roomNumberLabel" text="[Room Number]" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="10.0" spacing="7.0">
+         <children>
+            <Label text="RoomType" />
+            <Label fx:id="roomTypeLabel" text="[Room Type]" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox layoutX="35.0" layoutY="77.0" spacing="7.0">
+         <children>
+            <Label text="Hourly Rate" />
+            <Label fx:id="hourlyRateLabel" text="[Hourly Rate]" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="27.0" spacing="7.0">
+         <children>
+            <Label text="Location Details" />
+            <Label fx:id="locationDetailsLabel" text="[Location Details]" wrapText="true" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="44.0" spacing="7.0">
+         <children>
+            <Label text="Date In" />
+            <Label fx:id="dateInLabel" text="[Date In]" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox layoutX="35.0" layoutY="188.0" spacing="7.0">
+         <children>
+            <Label text="Hours of Stay" />
+            <Label fx:id="hoursOfStayLabel" text="[Hours of Stay]" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <Button fx:id="patientLeaveRoomButton" mnemonicParsing="false" onAction="#patientLeaveRoomAction" text="Patient Leave Room">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Button>
+      <HBox fx:id="dateOutContainer" layoutX="10.0" layoutY="141.0" spacing="7.0">
+         <children>
+            <Label text="Date Out" />
+            <Label fx:id="dateOutLabel" text="[Date Out]" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="25.0" right="25.0" top="30.0" />
+   </padding>
+</VBox>

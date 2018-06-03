@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="defaultContainer" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.receptionist.AdmittedPatientsListController">
+    <center>
+        <VBox maxHeight="-Infinity" maxWidth="800.0" minHeight="-Infinity" minWidth="500.0" prefWidth="500.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+            <effect>
+                <DropShadow color="GREY" offsetY="5.0" />
+            </effect>
+            <BorderPane.margin>
+                <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+            </BorderPane.margin>
+            <children>
+            <VBox prefWidth="100.0">
+               <children>
+                      <Label text="Admitted Patients" underline="true">
+                          <VBox.margin>
+                              <Insets bottom="7.0" />
+                          </VBox.margin>
+                          <font>
+                              <Font name="Times New Roman" size="24.0" />
+                          </font>
+                      </Label>
+                  <Label text="List of currently admitted patients in the hospital." wrapText="true" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="60.0" />
+               </VBox.margin>
+            </VBox>
+                <HBox prefWidth="200.0" spacing="12.0">
+                    <children>
+                        <TextField fx:id="searchField" onKeyReleased="#textChange" prefWidth="300.0" promptText="Find Patient" />
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </HBox>
+                <TableView fx:id="admissionsTable" prefHeight="400.0" tableMenuButtonVisible="true">
+                    <columns>
+                        <TableColumn fx:id="patientIdColumn" prefWidth="50.0" text="Id" />
+                        <TableColumn fx:id="patientNameColumn" prefWidth="115.0" text="Patient" />
+                  <TableColumn fx:id="initialFindingsColumn" prefWidth="160.0" text="Initial Findings" />
+                  <TableColumn fx:id="dateAdmittedColumn" prefWidth="120.0" text="Date Admitted" />
+                  <TableColumn fx:id="roomNumberColumn" prefWidth="60.0" text="Room No" />
+                  <TableColumn fx:id="locationDetailsColumn" prefWidth="200.0" text="Location Details" />
+                    </columns>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="25.0" />
+                    </VBox.margin>
+                </TableView>
+            </children>
+         <padding>
+            <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+         </padding>
+        </VBox>
+    </center>
+</BorderPane>

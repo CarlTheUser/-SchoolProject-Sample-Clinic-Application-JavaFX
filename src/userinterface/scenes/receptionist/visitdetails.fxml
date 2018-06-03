@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="container" minWidth="-Infinity" prefWidth="600.0" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.receptionist.VisitDetailsController">
+    <center>
+        <VBox maxWidth="800.0" prefWidth="500.0" styleClass="default-form" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+            </BorderPane.margin>
+            <children>
+                <VBox>
+                    <children>
+                        <Label styleClass="heading" text="Visit Details">
+                            <VBox.margin>
+                                <Insets bottom="7.0" />
+                            </VBox.margin></Label>
+                        <Label text="View the visit details and admit the patient if needed." />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="60.0" />
+                    </VBox.margin>
+                </VBox>
+            <Label text="Patient No" />
+            <Label fx:id="patientNumberLabel" text="[Patient No]" />
+            <Label text="Patient">
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <Label fx:id="patientNameLabel" text="[Patient]">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <HBox spacing="7.0">
+               <children>
+                  <Label text="Visit date" />
+                  <Label fx:id="visitDateLabel" text="[Visit date]" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="7.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <Label text="Visit Notes" />
+            <Label fx:id="visitNotesLabel" text="[Visit Notes]" wrapText="true" />
+            <Label styleClass="sub-heading" text="Admission">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="noAdmissionLabel" text="None">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="admitPatientButton" mnemonicParsing="false" onAction="#admitPatientAction" text="Admit Patient">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+            <VBox fx:id="newAdmissionForm">
+               <children>
+                  <Label text="Initial findings for admission">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="initialFindingsText" maxWidth="300.0" prefHeight="200.0" prefWidth="200.0" promptText="Reasons or hypotheses for admission" />
+                  <Label text="Choose an available room to admit patient" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TableView fx:id="roomUsageTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                    <columns>
+                      <TableColumn fx:id="roomNumberColumn" prefWidth="75.0" text="Room No" />
+                      <TableColumn fx:id="roomTypeColumn" prefWidth="119.0" text="Type" />
+                        <TableColumn fx:id="bedUsageColumn" prefWidth="75.0" text="Bed Usage" />
+                        <TableColumn fx:id="locationDetailsColumn" prefWidth="161.0" text="Location Details" />
+                        <TableColumn fx:id="actionColumn" prefWidth="79.0" text="Action" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox fx:id="admissionDetails">
+               <children>
+                  <Label text="Current Room">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="admissionRoomNumberLabel" text="[Room Number]" />
+                  <Label text="Initial Findings for Admission">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="admissionInitialFindingsLabel" text="[Initial Findings]" wrapText="true" />
+                  <VBox fx:id="finalFindingsForm">
+                     <children>
+                        <Label text="Final Findings for Admission">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="finalFindingsLabel" text="[Final Findings]" wrapText="true" />
+                        <Label text="Discharge Date">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="dischargeDateLabel" text="[Discharge Date]" />
+                     </children>
+                  </VBox>
+                  <Label styleClass="sub-heading" text="Admission Services">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="newServiceButton" mnemonicParsing="false" onAction="#newServiceAction" text="Add Medicine or Equipment">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </Button>
+                  <VBox fx:id="newServiceForm">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label text="Add medicine or medical euipment service for patient" />
+                        <Label text="Item Name">
+                           <VBox.margin>
+                              <Insets bottom="7.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox spacing="7.0">
+                           <children>
+                              <Label text="*" textFill="RED" />
+                              <TextField fx:id="itemNameText" maxWidth="300.0" prefWidth="300.0" promptText="Item Name" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="10.0" layoutY="10.0" text="Quantity">
+                           <VBox.margin>
+                              <Insets bottom="7.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox spacing="7.0">
+                           <children>
+                              <Label text="*" textFill="RED" />
+                              <TextField fx:id="quantityText" maxWidth="300.0" prefWidth="300.0" promptText="Quantity" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="10.0" layoutY="89.0" text="Unit Price">
+                           <VBox.margin>
+                              <Insets bottom="7.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox spacing="7.0">
+                           <children>
+                              <Label text="*" textFill="RED" />
+                              <TextField fx:id="unitPriceText" maxWidth="300.0" prefWidth="300.0" promptText="Unit Price" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="10.0" layoutY="25.0" text="Description">
+                           <VBox.margin>
+                              <Insets bottom="7.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox spacing="7.0">
+                           <children>
+                              <Label text="*" textFill="RED" />
+                              <TextField fx:id="descriptionText" maxWidth="300.0" prefWidth="300.0" promptText="Description" />
+                           </children>
+                        </HBox>
+                        <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="7.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#applyNewServiceAction" text="Ok" />
+                              <Button mnemonicParsing="false" onAction="#cancelNewServiceAction" text="Cancel" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="7.0" top="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="servicesTable" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                        <TableColumn fx:id="dateColumn" prefWidth="140.0" text="Date" />
+                      <TableColumn fx:id="serviceTypeColumn" prefWidth="120.0" text="Type" />
+                      <TableColumn fx:id="descriptionColumn" prefWidth="130.0" text="Description" />
+                        <TableColumn fx:id="serviceActionColumn" prefWidth="130.0" text="Action" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="dischargePatientButton" mnemonicParsing="false" onAction="#dischargePatientAction" text="Discharge Patient">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox fx:id="dischargeForm">
+               <children>
+                  <Label text="Final findings for admission">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="finalFindingsText" maxWidth="300.0" prefHeight="200.0" prefWidth="200.0" promptText="Final conclusions for admission" />
+                  <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="7.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#applyDischargePatientAction" text="Discharge Patient" />
+                        <Button mnemonicParsing="false" onAction="#cancelDischargePatientAction" text="Cancel" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            </children></VBox>
+    </center>
+</BorderPane>

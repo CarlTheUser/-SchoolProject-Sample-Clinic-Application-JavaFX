@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="container" minWidth="-Infinity" prefWidth="600.0" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.administrator.DoctorPatientVisitReport">
+    <center>
+        <VBox maxWidth="800.0" prefWidth="500.0" styleClass="default-form" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+            </BorderPane.margin>
+            <children>
+                <VBox>
+                    <children>
+                        <Label styleClass="heading" text="Doctor Patients Report">
+                            <VBox.margin>
+                                <Insets bottom="7.0" />
+                            </VBox.margin></Label>
+                        <Label text="View All Patients by doctor" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="60.0" />
+                    </VBox.margin>
+                </VBox>
+                <HBox spacing="12.0" />
+                <TableView fx:id="table" prefHeight="400.0" tableMenuButtonVisible="true">
+                    <columns>
+                        <TableColumn fx:id="doctorColumn" prefWidth="200.0" text="Doctor" />
+                        <TableColumn fx:id="patientColumn" prefWidth="200.0" text="Patient" />
+                        <TableColumn fx:id="lastVisitColumn" minWidth="0.0" prefWidth="150.0" text="Last Visit" />
+                    </columns>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="25.0" />
+                    </VBox.margin>
+                </TableView>
+            </children></VBox>
+    </center>
+</BorderPane>

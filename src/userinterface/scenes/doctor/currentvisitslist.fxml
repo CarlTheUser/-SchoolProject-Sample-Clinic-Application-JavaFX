@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="container" minWidth="-Infinity" prefWidth="600.0" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.doctor.CurrentVisitsListController">
+    <center>
+        <VBox maxWidth="800.0" prefWidth="500.0" styleClass="default-form" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+            </BorderPane.margin>
+            <children>
+                <VBox>
+                    <children>
+                        <Label styleClass="heading" text="Recent Visits">
+                            <VBox.margin>
+                                <Insets bottom="7.0" />
+                            </VBox.margin></Label>
+                        <Label text="List of recently visiting patients" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="60.0" />
+                    </VBox.margin>
+                </VBox>
+                <HBox spacing="12.0">
+                    <children>
+                        <TextField fx:id="searchField" onKeyReleased="#textChange" prefWidth="300.0" promptText="Search Patient" />
+                    </children>
+                </HBox>
+                <TableView fx:id="visitRecordsTable" prefHeight="400.0" tableMenuButtonVisible="true">
+                    <columns>
+                        <TableColumn fx:id="visitIdColumn" prefWidth="75.0" text="Visit No" />
+                        <TableColumn fx:id="patientColumn" prefWidth="75.0" text="Patient" />
+                  <TableColumn fx:id="notesColumn" prefWidth="171.0" text="Visit Notes" />
+                  <TableColumn fx:id="visitTimeColumn" prefWidth="92.0" text="Visit Time" />
+                  <TableColumn fx:id="actionColumn" prefWidth="83.0" text="Action" />
+                    </columns>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="25.0" />
+                    </VBox.margin>
+                </TableView>
+            </children></VBox>
+    </center>
+</BorderPane>

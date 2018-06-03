@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="container" minWidth="-Infinity" prefWidth="600.0" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.administrator.StaffListController">
+    <center>
+        <VBox maxWidth="800.0" prefWidth="500.0" styleClass="default-form" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+            </BorderPane.margin>
+            <children>
+                <VBox>
+                    <children>
+                        <Label styleClass="heading" text="Hospital Staff">
+                            <VBox.margin>
+                                <Insets bottom="7.0" />
+                            </VBox.margin></Label>
+                        <Label text="The list of doctors, receptionists" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="60.0" />
+                    </VBox.margin>
+                </VBox>
+            <Label text="Hospital Staff" />
+                <Button fx:id="newStaffButton" mnemonicParsing="false" onAction="#newStaffAction" text="Add new">
+                    <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                    </VBox.margin>
+                </Button>
+                <VBox fx:id="newStaffForm" prefWidth="100.0">
+                    <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label styleClass="sub-heading" text="New Staff Details" />
+                  <HBox spacing="7.0">
+                     <children>
+                              <Label text="Staff Id">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                              </Label>
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                        <TextField fx:id="staffIdText" maxWidth="150.0" promptText="Staff Id" />
+                        <Label text="Name">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Label>
+                        <GridPane hgap="7.0" maxWidth="1024.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Middlename" GridPane.columnIndex="1">
+                                    <GridPane.margin>
+                                        <Insets bottom="7.0" top="15.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <TextField fx:id="firstnameText" promptText="Firstname" GridPane.rowIndex="1" />
+                                <TextField fx:id="middlenameText" promptText="MIddlename" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField fx:id="lastnameText" promptText="Lastname" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <HBox spacing="7.0">
+                           <children>
+                                      <Label text="Fisrtname" />
+                              <Label text="*" textFill="RED" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="7.0" top="15.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox spacing="7.0" GridPane.columnIndex="2">
+                           <children>
+                                      <Label text="Lastname" />
+                              <Label text="*" textFill="RED" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="7.0" top="15.0" />
+                           </GridPane.margin>
+                        </HBox>
+                            </children>
+                        </GridPane>
+                  <HBox spacing="7.0">
+                     <children>
+                              <Label text="Gender" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                        <ChoiceBox fx:id="genderChoice" prefWidth="150.0" />
+                  <HBox spacing="7.0">
+                     <children>
+                              <Label text="Birthdate" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                        <DatePicker fx:id="birthdatePicker" />
+                        <Label styleClass="sub-heading" text="Professional Details">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Label>
+                  <HBox spacing="7.0">
+                     <children>
+                              <Label text="Position" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                        <TextField fx:id="positionText" maxWidth="200.0" promptText="Position">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </TextField>
+                        <Label text="Expertise">
+                            <VBox.margin>
+                                <Insets bottom="7.0" top="15.0" />
+                            </VBox.margin>
+                        </Label>
+                        <TextField fx:id="expertiseText" maxWidth="200.0" promptText="Expertise" />
+                        <Label styleClass="sub-heading" text="Contact Details">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Label>
+                  <HBox spacing="7.0">
+                     <children>
+                              <Label text="Contact Number" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                        <TextField fx:id="contactNumberText" maxWidth="200.0" promptText="Contact Number" />
+                  <HBox spacing="7.0">
+                     <children>
+                              <Label text="Email" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                        <TextField fx:id="emailText" maxWidth="200.0" promptText="Email" />
+                  <HBox spacing="7.0">
+                     <children>
+                              <Label text="Address" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                        <TextField fx:id="addressText" layoutX="10.0" layoutY="495.0" maxWidth="200.0" promptText="Address" />
+                  <Label styleClass="sub-heading" text="Account Details">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="The account details defines the user credentials to be used to access the application." wrapText="true" />
+                  <HBox spacing="7.0">
+                     <children>
+                        <Label text="Username" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TextField fx:id="usernameText" maxWidth="200.0" promptText="Username" />
+                  <HBox spacing="7.0">
+                     <children>
+                        <Label text="Account Type" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ChoiceBox fx:id="accountTypeChoice" prefWidth="150.0" />
+                  <HBox spacing="7.0">
+                     <children>
+                        <Label text="Password" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <PasswordField fx:id="passwordText" maxWidth="200.0" promptText="Password" />
+                  <HBox spacing="7.0">
+                     <children>
+                        <Label text="Confirm Password" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <PasswordField fx:id="confirmPasswordText" maxWidth="200.0" promptText="Confirm Password" />
+                        <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="7.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#saveNewStaffAction" text="Save" />
+                                <Button mnemonicParsing="false" onAction="#cancelNewStaffAction" text="Cancel" />
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="7.0" top="15.0" />
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+                <TableView fx:id="staffTable" editable="true" prefHeight="400.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                    <columns>
+                        <TableColumn fx:id="idColumn" editable="false" prefWidth="63.0" text="Id" />
+                        <TableColumn fx:id="staffColumn" prefWidth="160.0" text="Staff" />
+                        <TableColumn fx:id="positionColumn" prefWidth="95.0" text="Position" />
+                        <TableColumn fx:id="expertiseColumn" prefWidth="103.0" text="Expertise" />
+                        <TableColumn fx:id="actionColumn" prefWidth="88.0" text="Action" />
+                    </columns>
+                </TableView>
+            </children></VBox>
+    </center>
+</BorderPane>

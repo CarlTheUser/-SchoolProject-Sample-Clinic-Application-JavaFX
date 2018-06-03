@@ -1,0 +1,80 @@
+.desk{
+    -fx-background-image:url("../images/wood-wallpaper-min.jpg");
+}
+
+.hospital-background{
+    -fx-background-image:url("../images/hospital.jpg");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover, auto;
+}
+
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+    -fx-background-insets: 0;
+}
+
+.no-background{
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.navigation-back-button{
+-fx-margin: 5px;
+}
+
+.transparent-flat-button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+.transparent-flat-button:hover{
+    -fx-background-color: rgba(0,0,0, 0.05);
+}
+
+.transparent-flat-button:pressed {
+    -fx-background-color: rgba(0,0,0, 0.1);
+}
+
+.navigation-item{
+    -fx-font-size: 14px;
+}
+
+
+
+.heading{
+    -fx-font-size: 24;
+    -fx-font-family: "Times New Roman";
+    -fx-underline: true
+}
+
+.sub-heading{
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.default-form{
+    -fx-padding: 30 20 30 20;
+    -fx-effect: dropshadow( three-pass-box , rgba(0, 0, 0, 0.4) , 10, 0.0, 0 , 5);
+    -fx-background-color:white;
+}
+
+.card{
+    -fx-effect: dropshadow( three-pass-box , rgba(0, 0, 0, 0.4) , 10, 0.0, 0 , 5);
+    -fx-background-color:white;
+}
+

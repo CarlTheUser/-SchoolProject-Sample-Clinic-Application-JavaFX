@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="container" minWidth="-Infinity" prefWidth="600.0" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.scenes.administrator.RoomsListController">
+    <center>
+        <VBox maxWidth="800.0" prefWidth="500.0" styleClass="default-form" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="50.0" left="25.0" right="25.0" top="50.0" />
+            </BorderPane.margin>
+            <children>
+                <VBox>
+                    <children>
+                        <Label styleClass="heading" text="Hospital Patient Rooms">
+                            <VBox.margin>
+                                <Insets bottom="7.0" />
+                            </VBox.margin></Label>
+                        <Label text="The rooms where the patients stay" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="60.0" />
+                    </VBox.margin>
+                </VBox>
+            <Button fx:id="addNewRoomButton" mnemonicParsing="false" onAction="#newRoomAction" text="Add new">
+               <VBox.margin>
+                  <Insets bottom="7.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <VBox fx:id="newRoomForm" prefWidth="100.0">
+               <VBox.margin>
+                  <Insets bottom="7.0" top="15.0" />
+               </VBox.margin>
+               <children>
+                  <Label styleClass="sub-heading" text="New Room Details" />
+                  <HBox spacing="7.0">
+                     <children>
+                        <Label text="Type" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ChoiceBox fx:id="roomTypesChoiceBox" prefWidth="150.0" />
+                  <HBox spacing="7.0">
+                     <children>
+                        <Label text="Hourly Rate" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TextField fx:id="hourlyRateText" maxWidth="150.0" promptText="Hourly rate" />
+                  <HBox spacing="7.0">
+                     <children>
+                        <Label text="Bed Count" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TextField fx:id="bedCountText" maxWidth="150.0" promptText="Bed Count" />
+                  <HBox spacing="7.0">
+                     <children>
+                        <Label text="Location Details" />
+                        <Label text="*" textFill="RED" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TextArea fx:id="locationDetailsText" maxWidth="300.0" prefHeight="200.0" prefWidth="200.0" promptText="Room location, what floor, near where">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextArea>
+                  <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="7.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#saveNewRoomAction" text="Save" />
+                        <Button mnemonicParsing="false" onAction="#cancelNewRoomAction" text="Cancel" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <TableView fx:id="roomsTable" editable="true" prefHeight="400.0" prefWidth="200.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="roomNumberColumn" editable="false" prefWidth="98.0" text="Room Number" />
+                  <TableColumn fx:id="roomTypeColumn" onEditCancel="#roomTypeColumnEditCancelEvent" onEditCommit="#roomTypeColumnEditCommitEvent" onEditStart="#roomTypeColumnEditStartEvent" prefWidth="98.0" text="Type" />
+                  <TableColumn fx:id="hourlyRateColumn" onEditCancel="#hourlyRateEditCancelEvent" onEditCommit="#hourkyRateColumnEditCommitEvent" onEditStart="#hourlyRateColumnEditStartEvent" prefWidth="82.0" text="Hourly Rate" />
+                  <TableColumn fx:id="bedCountColumn" onEditCancel="#bedCountColumnEditCancelEvent" onEditCommit="#bedCountColumnEditCommitEvent" onEditStart="#bedCountColumnEditStartEvent" prefWidth="72.0" text="Bed Count" />
+                <TableColumn fx:id="locationDetailsColumn" onEditCancel="#locationDetailsColumnEditCancelEvent" onEditCommit="#locationDetailsColumnEditCommitEvent" onEditStart="#locationDetailsColumnEditStartEvent" prefWidth="159.0" text="Location Details" />
+              </columns>
+            </TableView>
+            </children></VBox>
+    </center>
+</BorderPane>

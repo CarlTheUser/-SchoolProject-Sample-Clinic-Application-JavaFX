@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefWidth="200.0" spacing="7.0">
+         <children>
+            <Label text="Visit Date" />
+            <Label fx:id="labelNewVisitDate" text="[Visit Date]" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox spacing="7.0">
+         <children>
+            <Label text="Visit Notes" />
+            <Label text="*" textFill="RED" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="7.0" />
+         </VBox.margin>
+      </HBox>
+      <TextArea fx:id="taNewVisitNotes" prefHeight="200.0" prefWidth="250.0">
+         <VBox.margin>
+            <Insets bottom="7.0" />
+         </VBox.margin>
+      </TextArea>
+      <HBox nodeOrientation="RIGHT_TO_LEFT" prefWidth="200.0" spacing="7.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#saveNewVisitAction" text="Save Record" />
+            <Button mnemonicParsing="false" onAction="#cancelNewVisitAction" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+   </padding>
+</VBox>
